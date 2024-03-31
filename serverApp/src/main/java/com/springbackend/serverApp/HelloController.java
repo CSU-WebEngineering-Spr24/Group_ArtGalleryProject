@@ -10,10 +10,10 @@ import java.util.*;
 @RestController
 public class HelloController {
 
-	@GetMapping("/")
+	/* @GetMapping("/")
 	public String index() {
 		return "Greetings from Spring Boot!";
-	}
+	} */
 
 	@GetMapping("/hello/{name}")
     public String hello(@PathVariable String name) {
