@@ -16,7 +16,7 @@ function App() {
 
   const fetchArtworks = async () => {
     try {
-      const response = await axios.get(`https://api.artic.edu/api/v1/artworks?limit=${limit}`);
+      const response = await axios.get(`/artworks?limit=${limit}`);
       setArtworks(response.data.data);
     } catch (error) {
       console.error('Error fetching artworks:', error);
