@@ -9,3 +9,7 @@
 - Swati Kasina
 - Sindhu Yasa
 - Vineetha Bandla
+
+
+
+Refered API Documentation Link : https://api.artic.edu/docs/#collections 
