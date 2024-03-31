@@ -13,3 +13,7 @@
 
 
 Refered API Documentation Link : https://api.artic.edu/docs/#collections 
+
+
+using /artworks?limit=<int> api endpoint
+![alt text](image.png)

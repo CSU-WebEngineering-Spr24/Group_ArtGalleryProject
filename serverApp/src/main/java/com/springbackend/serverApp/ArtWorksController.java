@@ -14,7 +14,7 @@ public class ArtWorksController {
     private String artworksApiUrl;
 
 
-    @GetMapping("/Artworks")
+    @GetMapping("/artworks")
     public ResponseEntity<Models.ArtworksResponse> getArtworksModels(@RequestParam(defaultValue = "10", required = false) int limit) {
         RestTemplate restTemplate = new RestTemplate();
         String apiUrl = artworksApiUrl +"/artworks" + "?limit=" + limit;
