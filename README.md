@@ -16,7 +16,13 @@ Refer to the [API Documentation Link](https://api.artic.edu/docs/#collections) f
 
 Using the `/artworks?limit=<int>` API endpoint.
 
-![Artwork Preview](image.png)
+![image](https://github.com/CSU-WebEngineering-Spr24/Group_ArtGalleryProject/assets/150859740/3a745da8-7b94-42e9-8004-f9883e8097fb)
+![image](https://github.com/CSU-WebEngineering-Spr24/Group_ArtGalleryProject/assets/150859740/1a3f01e6-47e1-47fe-b55f-607f35f22f7c)
+![image](https://github.com/CSU-WebEngineering-Spr24/Group_ArtGalleryProject/assets/150859740/b25954ca-6fb2-4015-ac15-01862dedee11)
+![image](https://github.com/CSU-WebEngineering-Spr24/Group_ArtGalleryProject/assets/150859740/7fcaae05-d13b-4fae-9e7b-ba48e3af4cef)
+![image](https://github.com/CSU-WebEngineering-Spr24/Group_ArtGalleryProject/assets/150859740/dc9136c4-4ba6-4377-9df1-ad05afddcec3)
+
+
 
 ---
 
@@ -48,6 +54,13 @@ Using the `/artworks?limit=<int>` API endpoint.
 
    ```bash
    npm install
+   ```
+
+   > Demo 2 frontend dominant changes, so run frontend
+   Run the frontend:  [Pase 2]
+
+   ```bash
+   npm run dev
    ```
 
    Build the frontend:
