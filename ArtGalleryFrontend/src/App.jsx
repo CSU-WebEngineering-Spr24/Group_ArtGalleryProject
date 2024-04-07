@@ -9,6 +9,7 @@ import {
   TextField,
   Button,
 } from '@mui/material';
+import { Outlet} from 'react-router-dom';
 
 function App() {
   const [artworks, setArtworks] = useState([]);
@@ -16,7 +17,7 @@ function App() {
 
   const fetchArtworks = async () => {
     try {
-      const response = await axios.get(`/artworks?limit=${limit}`);
+      const response = await axios.get(`https://api.artic.edu/api/v1/artworks?limit=${limit}`);
       setArtworks(response.data.data);
     } catch (error) {
       console.error('Error fetching artworks:', error);
@@ -38,6 +39,7 @@ function App() {
   return (
     <Container style={{ backgroundColor: "gray", padding: "10px", minHeight: "100vh",minWidth:"100%" }}>
 
+      <Outlet />
       <Typography variant="h4" gutterBottom>
         Artworks
       </Typography>
