@@ -4,6 +4,14 @@
 
 # Group_ArtGalleryProject
 
+```
+cd ArtGalleryFrontend
+
+npm run dev
+
+```
+
+
 ## Team Project
 
 ### Team Members
@@ -11,6 +19,29 @@
 - Swati Kasina
 - Sindhu Yasa
 - Vineetha Bandla
+
+# Demo 3 Updates
+
+
+## artworks page with query and page number fields
+![alt text](image-1.png)
+
+## Artwork details page
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+## Artists page
+![alt text](image-4.png)
+
+## Artist Details Page
+![alt text](image-5.png)
+
+## Dynamic Routes
+![alt text](image-6.png)
+
+
+
 
 Refer to the [API Documentation Link](https://api.artic.edu/docs/#collections) for details.
 
