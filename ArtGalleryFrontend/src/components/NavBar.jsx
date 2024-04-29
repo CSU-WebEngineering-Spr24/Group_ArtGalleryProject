@@ -30,6 +30,7 @@ function OffcanvasExample() {
                   {/* link to home page react dom router */}
                   <Nav.Link as={Link} to="/home">Home</Nav.Link>
                   <Nav.Link as={Link} to="/artworks">Artworks</Nav.Link>
+                  <Nav.Link as={Link} to="/artists">Artists</Nav.Link>
                   
                   <Nav.Link as={Link} to="/global">Global</Nav.Link>
                   <NavDropdown

@@ -1,192 +1,190 @@
-/* import React from 'react';
-import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import heirloomTomatoImage from "../images/paint1.jpg"; // Replace with your image path
-import organicGingerImage from "../images/NarutoHinata.jpg"; // Replace with your image path
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Form,
+  Button,
+  Spinner,
+} from "react-bootstrap";
 
-const ArtworksPage = () => {
+// Link
+import { Link } from "react-router-dom";
+
+function App() {
+  const [artworks, setArtworks] = useState([]);
+  const [limit, setLimit] = useState(10);
+  const [page, setPage] = useState(1);
+  const [query, setQuery] = useState("");
+  const [dateStart, setDateStart] = useState("");
+  const [dateEnd, setDateEnd] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const fetchArtworks = async () => {
+    setLoading(true);
+    try {
+        let queryParams = {
+            limit: limit,
+            page: page,
+            fields: 'id,title,artist_display,date_display,main_reference_number,image_id,department_title'
+        };
+
+        let queryObj = {
+            must: [
+                { exists: { field: "image_id" } } // Ensuring image_id is not null
+            ]
+        };
+
+        if (dateStart && dateEnd) {
+            // Adding date range condition
+            queryObj.must.push({
+                range: {
+                    date_start: {
+                        gte: dateStart,
+                        lte: dateEnd
+                    }
+                }
+            });
+        }
+
+        if (query) {
+            queryParams.q = query;
+        }
+
+        // Adding the query object with all the conditions to queryParams
+        queryParams.query = {
+            bool: queryObj
+        };
+
+        const url = `https://api.artic.edu/api/v1/artworks/search?params=${encodeURIComponent(JSON.stringify(queryParams))}`;
+        const response = await axios.get(url);
+        setArtworks(response.data.data);
+    } catch (error) {
+        console.error('Error fetching artworks:', error);
+    } finally {
+        setLoading(false);
+    }
+};
+
+
+  useEffect(() => {
+    fetchArtworks();
+  }, []);
+
   return (
-    <Container>
-      <Row className="justify-content-md-center my-5">
-        <Col md={12} className="text-center">
-          <h2>Artworks</h2>
+    <Container style={{ minHeight: "100vh" }}>
+      <Row className="justify-content-md-center my-2">
+        <Col md={12}>
+          <h2>Explore Artworks</h2>
           <hr />
         </Col>
       </Row>
-      
       <Row>
-        <Col md={8}>
-          <Row>
-            <Col md={6}>
-              <Card className="mb-4">
-                <Card.Img variant="top" src={heirloomTomatoImage} />
-                <Card.Body>
-                  <Card.Title>Heirloom tomato</Card.Title>
-                  <Card.Text>
-                    $5.99 / lb<br />
-                    Grown in San Juan Capistrano, CA
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={6}>
-              <Card className="mb-4">
-                <Card.Img variant="top" src={organicGingerImage} />
-                <Card.Body>
-                  <Card.Title>Organic ginger</Card.Title>
-                  <Card.Text>
-                    $12.99 / lb<br />
-                    Grown in Huntington Beach, CA
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Col>
-        
-        <Col md={4}>
+        <Col md={12}>
           <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>Label</Form.Label>
-              <Form.Control type="text" placeholder="Placeholder" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Label</Form.Label>
-              <Form.Control type="text" placeholder="Placeholder" />
-            </Form.Group>
-            <Form.Group className="mb-3">
-              <Form.Label>Label</Form.Label>
-              <Form.Control type="text" placeholder="Placeholder" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <Row>
+              <Col sm={6} md={3}>
+                <Form.Group controlId="formLimit">
+                  <Form.Label>Limit</Form.Label>
+                  <Form.Control
+                    type="number"
+                    value={limit}
+                    onChange={(e) => setLimit(e.target.value)}
+                    placeholder="Enter number of artworks"
+                  />
+                </Form.Group>
+              </Col>
+              <Col sm={6} md={3}>
+                <Form.Group controlId="formPage">
+                  <Form.Label>Page</Form.Label>
+                  <Form.Control
+                    type="number"
+                    value={page}
+                    onChange={(e) => setPage(e.target.value)}
+                    placeholder="Enter page number"
+                  />
+                </Form.Group>
+              </Col>
+              <Col sm={12} md={6}>
+                <Form.Group controlId="formQuery">
+                  <Form.Label>Search Query</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    placeholder="Search terms"
+                  />
+                </Form.Group>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={6} md={3}>
+                <Form.Group controlId="formDateStart">
+                  <Form.Label>Date Start</Form.Label>
+                  <Form.Control
+                    type="date"
+                    value={dateStart}
+                    onChange={(e) => setDateStart(e.target.value)}
+                  />
+                </Form.Group>
+              </Col>
+              <Col sm={6} md={3}>
+                <Form.Group controlId="formDateEnd">
+                  <Form.Label>Date End</Form.Label>
+                  <Form.Control
+                    type="date"
+                    value={dateEnd}
+                    onChange={(e) => setDateEnd(e.target.value)}
+                  />
+                </Form.Group>
+              </Col>
+              <Col md={6}>
+                <Button
+                  variant="primary"
+                  onClick={fetchArtworks}
+                  disabled={loading}
+                  className="mt-4"
+                >
+                  {loading ? "Loading..." : "Fetch Artworks"}
+                </Button>
+              </Col>
+            </Row>
           </Form>
         </Col>
       </Row>
+      <Row>{artworks.map((artwork) => artworkCard(artwork))}</Row>
     </Container>
   );
-};
 
-export default ArtworksPage;
- */
+}
 
+function artworkCard(artwork) {
+  console.log(`Artwork ID ${artwork.id} has image ID: ${artwork.image_id}`); // More informative logging
 
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Container, Row, Col, Card, Form, Button, ProgressBar, Spinner } from 'react-bootstrap';
-
-function App() {
-    const [artworks, setArtworks] = useState([]);
-    const [limit, setLimit] = useState(10); // Default limit count
-    const [loading, setLoading] = useState(false);
-    const [progress, setProgress] = useState(0);
-
-    const fetchArtworks = async () => {
-        // if limit 0 then set artworks to empty array
-        if (limit == 0) {
-            setArtworks([]);
-            return;
-        }
-        else {
-            try {
-                setLoading(true);
-                const response = await axios.get(`https://api.artic.edu/api/v1/artworks?limit=` + limit);
-                setArtworks(response.data.data);
-                setProgress(100); // Update the progress when the data is fully loaded
-            } catch (error) {
-                console.error('Error fetching artworks:', error);
-            } finally {
-                setLoading(false);
-            }
-        }
-    };
-
-    useEffect(() => {
-        fetchArtworks();
-    }, [limit]);
-
-    const handleLimitChange = (event) => {
-        setLimit(event.target.value);
-    };
-
-    const handleFetchClick = () => {
-        fetchArtworks();
-    };
-
-    return (
-        <Container style={{ minHeight: '100vh' }}>
-            <Row className="justify-content-md-center my-2">
-                <Col md={12} >
-                    <h2>Artworks</h2>
-                    <hr />
-                </Col>
-            </Row>
-            <Row className="my-2">
-                <Col md={4}>
-                    <Form className="mb-3" >
-                        <Form.Group controlId="formLimit">
-                            <Form.Label>Limit</Form.Label>
-                            <Form.Control
-                                type="number"
-                                value={limit}
-                                onChange={handleLimitChange}
-                                placeholder="Enter number of artworks"
-                            />
-                        </Form.Group>
-                        {loading ? (
-                            <div className="text-center" style={{ margin: "10px" }}>
-                                <Button variant="primary" disabled>
-                                    <Spinner
-                                        as="span"
-                                        animation="grow"
-                                        size="sm"
-                                        role="status"
-                                        aria-hidden="true"
-                                    />
-                                    Loading...
-                                </Button>
-                            </div>
-                        ) : null}
-
-                    </Form>
-                </Col>
-            </Row>
-            <Row>
-
-                {artworks.map((artwork) => (
-                    artworkCard(artwork)
-                ))}
-            </Row>
-        </Container>
-    );
-
-    function artworkCard(artwork) {
-        const cardStyle = {
-            maxHeight: '400px', // Set your desired max-height
-            overflow: 'hidden'
-        };
-
-        const cardImageStyle = {
-            maxHeight: '200px', // Adjust accordingly for the image
-            overflow: 'hidden'
-        };
-        return <Col key={artwork.id} xs={12} sm={6} md={4} lg={3} className="mb-3">
-            <Card style={cardStyle}>
-                <Card.Img
-                    variant="top"
-                    src={`https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`}
-                    alt={artwork.title}
-                    style={cardImageStyle} />
-                <Card.Body>
-                    <Card.Title>{artwork.title}</Card.Title>
-                    {artwork.artist_display && <Card.Text>Artist: {artwork.artist_display}</Card.Text>}
-                    {artwork.department_title && <Card.Text>Department: {artwork.department_title}</Card.Text>}
-                </Card.Body>
-            </Card>
-        </Col>;
-    }
+  return (
+      <Col key={artwork.id} xs={12} sm={6} md={4} lg={3} className="mb-3">
+          <Card>
+              <Link to={`/artworks/${artwork.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <Card.Img
+                      variant="top"
+                      src={`https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`}
+                      alt={artwork.title}
+                  />
+                  <Card.Body>
+                      <Card.Title>{artwork.title}</Card.Title>
+                  </Card.Body>
+              </Link>
+              {artwork.artist_display && (
+                  <Card.Text className="px-3">Artist: {artwork.artist_display}</Card.Text>
+              )}
+              {artwork.department_title && (
+                  <Card.Text className="px-3">Department: {artwork.department_title}</Card.Text>
+              )}
+          </Card>
+      </Col>
+  );
 }
 
 export default App;
-

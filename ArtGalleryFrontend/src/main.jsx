@@ -6,6 +6,9 @@ import HomePage from './Home.jsx';
 import ArtworksPage from './Artworks.jsx';
 import Error404 from './Error404.jsx';
 import FavouritesPage from './Favouties.jsx';
+import ArtistsPage from './Artists.jsx';
+import ArtistDetailsPage from './ArtistDetailsPage.jsx';
+import ArtworkDetailsPage from './ArtworkDetailsPage.jsx';
 
 // CSS styles to make the root element occupy 100% width
 const rootStyle = {
@@ -24,6 +27,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="home" element={<HomePage />} />
             <Route path="favourites" element={<FavouritesPage/>} />
             <Route path="artworks" element={<ArtworksPage />} />
+            <Route path="/artworks/:artworkId" element={<ArtworkDetailsPage />} />
+            <Route path="artists" element={<ArtistsPage />} />
+            <Route path="artists/:artistId" element={<ArtistDetailsPage />} />
             <Route path="global" element={<div />} />
             <Route path="*" element={<Error404 />} />
           </Route>
