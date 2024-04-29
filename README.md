@@ -7,6 +7,8 @@
 ```
 cd ArtGalleryFrontend
 
+npm i
+
 npm run dev
 
 ```
