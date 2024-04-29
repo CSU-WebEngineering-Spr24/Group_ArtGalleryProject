@@ -4,6 +4,14 @@
 
 # Group_ArtGalleryProject
 
+```
+cd ArtGalleryFrontend
+
+npm run dev
+
+```
+
+
 ## Team Project
 
 ### Team Members
