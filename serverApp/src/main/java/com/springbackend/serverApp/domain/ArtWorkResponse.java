@@ -167,33 +167,6 @@ import java.util.List;
 @Setter
 class ArtWorkResponseData {
 
-    /* "id": 129884,
-        "api_model": "artworks",
-        "api_link": "https:\/\/api.artic.edu\/api\/v1\/artworks\/129884",
-        "is_boosted": true,
-        "title": "Starry Night and the Astronauts",
-        "alt_titles": null,
-        "thumbnail": {
-            "lqip": "data:image\/gif;base64,R0lGODlhBAAFAPQAABw\/Zhg\/aBRBaBZBahRCaxxBahxEahNIchZJcR9LdB9OdiZIZSBEbShLbjxRZyBPeipRcSpReUpWaitXgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAEAAUAAAURoMJIDhJAywAcAlEkxhNNTQgAOw==",
-            "width": 5376,
-            "height": 6112,
-            "alt_text": "Abstract painting composed of small vertical dabs of multiple shades of blue with a small area of similar strokes of red, orange, and yellow in the upper right."
-        },
-        "main_reference_number": "1994.36",
-        "has_not_been_viewed_much": false,
-        "boost_rank": 1,
-        "date_start": 1972,
-        "date_end": 1972,
-        "date_display": "1972",
-        "date_qualifier_title": "",
-        "date_qualifier_id": null,
-        "artist_display": "Alma Thomas\nAmerican, 1891\u20131978",
-        "place_of_origin": "United States",
-        "description": "<p>After decades as a representational painter, in her seventies Alma Thomas turned to abstraction, creating shimmering, mosaic-like fields of color with rhythmic dabs of paint that were often inspired by forms from nature. The artist had been fascinated with space exploration since the late 1960s, and her later paintings often referenced America\u2019s manned Apollo missions to the moon. Although she had never flown, Thomas began to paint as if she were in an airplane, capturing what she described as shifting patterns of light and streaks of color. \u201cYou look down on things,\u201d she explained. \u201cYou streak through the clouds so fast. . . . You see only streaks of color.\u201d<\/p>\n<p><em>Starry Night and the Astronauts<\/em> evokes the open expanse and celestial patterns of a night sky, but despite its narrative title, the work could also be read as an aerial view of a watery surface, playing with our sense of immersion within an otherwise flat picture plane. The viewer is immersed not only in the sense of organic expanse that this painting achieves, however, but also in an encounter with Thomas\u2019s process: the surface here is clearly constructed stroke by stroke. Meanwhile, the glimpses of raw canvas between each primary-colored mark seem as vivid as the applied paint itself\u2014almost as if the composition were backlit. Thomas relied on the enlivening properties of color throughout her late-blooming career. \u201cColor is life,\u201d she once proclaimed, \u201cand light is the mother of color.\u201d This painting was created in 1972, when the artist was eighty. In the same year, she became the first African American woman to receive a solo exhibition at a major art museum, the Whitney Museum of American Art in New York City.<\/p>\n",
-        "short_description": "Alma Thomas was enthralled by astronauts and outer space. This painting, made when she was 81, showcases that fascination through her signature style of short, rhythmic strokes of paint. \u201cColor is life, and light is the mother of color,\u201d she once proclaimed. In 1972, she became the first African American woman to have a solo exhibition at the Whitney Museum of American Art in New York.",
-        "dimensions": "152.4 \u00d7 134.6 cm (60 \u00d7 53 in.)"
-    */
-
     
     public static class Dimensions {
         @JsonProperty("depth")
@@ -247,9 +220,6 @@ class ArtWorkResponseData {
     @JsonProperty("short_description")
     private String shortDescription;
     @JsonProperty("dimensions")
-    // @JsonProperty("dimensions_detail")
-    // private List<Dimensions> dimensions;
-    // @JsonProperty("medium_display")
     private String mediumDisplay;
     @JsonProperty("inscriptions")
     private String inscriptions;
@@ -305,20 +275,6 @@ class ArtWorkResponseData {
     }
     @JsonProperty("color")
     private Color color;
-    /* "latitude": 41.8805769576144,
-        "longitude": -87.6218733015747,
-        "latlon": "41.880576957614,41.880576957614",
-        "is_on_view": true,
-        "on_loan_display": null,
-        "gallery_title": "Gallery 291",
-        "gallery_id": 25468,
-        "nomisma_id": null,
-        "artwork_type_title": "Painting",
-        "artwork_type_id": 1,
-        "department_title": "Contemporary Art",
-        "department_id": "PC-8",
-        "artist_id": 44708,
-        "artist_title": "Alma Thomas", */
     @JsonProperty("latitude")
     private double latitude;
     @JsonProperty("longitude")
@@ -348,41 +304,6 @@ class ArtWorkResponseData {
     @JsonProperty("artist_title")
     private String artistTitle;
 
-    /* "artist_titles": [
-            "Alma Thomas"
-        ],
-        "category_ids": [
-            "PC-8",
-            "PC-142",
-            "PC-825",
-            "PC-830"
-        ],
-        "category_titles": [
-            "Contemporary Art",
-            "African American artists",
-            "Women artists",
-            "African Diaspora"
-        ],
-        "term_titles": [
-            "painting",
-            "painting (image making)",
-            "acrylic paint",
-            "patterns",
-            "contemporary",
-            "canvas",
-            "blue (color)",
-            "red (color)",
-            "orange (color)",
-            "yellow (color)",
-            "modern and contemporary art"
-        ],
-        "style_id": "TM-12062",
-        "style_title": "contemporary",
-        "alt_style_ids": [],
-        "style_ids": [
-            "TM-12062"
-        ], */
-
     @JsonProperty("artist_titles")
     private List<String> artistTitles;
     @JsonProperty("category_ids")
@@ -401,13 +322,7 @@ class ArtWorkResponseData {
     private List<String> styleIds;
     @JsonProperty("style_titles")
     private List<String> styleTitles;
-    /* 
-    "image_id": "e966799b-97ee-1cc6-bd2f-a94b4b8bb8f9",
-        "alt_image_ids": [],
-        "document_ids": [
-            "0779b4bd-296f-671f-215e-129f2101ad07"
-        ], */
-
+    
     @JsonProperty("image_id")
     private String imageId;
     @JsonProperty("alt_image_ids")
@@ -428,10 +343,7 @@ class ArtworksResponse {
     private Config config;
 }
 
-/* "config": {
-        "iiif_url": "https:\/\/www.artic.edu\/iiif\/2",
-        "website_url": "http:\/\/www.artic.edu"
-    } */
+
 
 class Config {
     @JsonProperty("iiif_url")
@@ -440,16 +352,7 @@ class Config {
     private String websiteUrl;
 }
 
-/* 
-"info": {
-        "license_text": "The `description` field in this response is licensed under a Creative Commons Attribution 4.0 Generic License (CC-By) and the Terms and Conditions of artic.edu. All other data in this response is licensed under a Creative Commons Zero (CC0) 1.0 designation and the Terms and Conditions of artic.edu.",
-        "license_links": [
-            "https:\/\/creativecommons.org\/publicdomain\/zero\/1.0\/",
-            "https:\/\/www.artic.edu\/terms"
-        ],
-        "version": "1.10"
-    },
- */
+
 
 class Info {
     @JsonProperty("license_text")
