@@ -1,11 +1,16 @@
-package com.springbackend.serverApp;
+package com.springbackend.serverApp.domain;
 
-import lombok.Data;
+
+import lombok.Getter;
+import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 
 import java.util.List;
 
 public class Models {
-    @Data
+    @Getter
+    @Setter
     public static class Artwork {
         private String id;
         private String title;
@@ -18,7 +23,8 @@ public class Models {
         // Add other fields as needed
     }
 
-    @Data
+    @Getter
+    @Setter
     public static class Pagination {
         private int total;
         private int limit;
@@ -29,7 +35,8 @@ public class Models {
         // Add other fields as needed
     }
 
-    @Data
+    @Getter
+    @Setter
     public static class Info {
         private String licenseText;
         private List<String> licenseLinks;
@@ -37,14 +44,16 @@ public class Models {
         // Add other fields as needed
     }
 
-    @Data
+    @Getter
+    @Setter
     public static class Config {
         private String iiifUrl;
         private String websiteUrl;
         // Add other fields as needed
     }
 
-    @Data
+    @Getter
+    @Setter
     public static class ArtworksResponse {
         private Pagination pagination;
         private List<Artwork> data;
