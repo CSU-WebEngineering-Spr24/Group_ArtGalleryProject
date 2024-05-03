@@ -1,0 +1,114 @@
+{
+    "preference": null,
+    "pagination": {
+        "total": 28,
+        "limit": 10,
+        "offset": 0,
+        "total_pages": 3,
+        "current_page": 1
+    },
+    "data": [
+        {
+            "_score": 38.913326,
+            "artist_display": "Ed Paschke\nAmerican, 1939-2004",
+            "date_display": "1974",
+            "id": 97402,
+            "image_id": "b4adaaf1-81ec-755d-a5df-15c85b63a86c",
+            "title": "Minnie",
+            "main_reference_number": "1982.397"
+        },
+        {
+            "_score": 11.443846,
+            "artist_display": "Ed Paschke\nAmerican, 1939-2004",
+            "date_display": "1969",
+            "id": 34149,
+            "image_id": "3c8a4360-27d8-bba2-a434-8b04dbe3f829",
+            "title": "Mid American",
+            "main_reference_number": "1970.415"
+        },
+        {
+            "_score": 10.612498,
+            "artist_display": "Ed Paschke\nAmerican, 1939-2004",
+            "date_display": "1985",
+            "id": 105207,
+            "image_id": "72f0d7ee-878d-d9f9-4550-eb4417490e0d",
+            "title": "Caliente",
+            "main_reference_number": "1986.92"
+        },
+        {
+            "_score": 9.169134,
+            "artist_display": "Ed Paschke\nAmerican, 1939-2004",
+            "date_display": "1990",
+            "id": 117581,
+            "image_id": "9d1e8a40-d5d7-c4e9-4bc5-d4dea8ab31e3",
+            "title": "Hot Fax",
+            "main_reference_number": "1990.383"
+        },
+        {
+            "_score": 8.554161,
+            "artist_display": "Ed Paschke (American, 1939-2004)\nprinted by Jack Lemon\npublished by Landfall Press (American, founded 1970)",
+            "date_display": "1983",
+            "id": 100903,
+            "image_id": "030b93d5-97bc-9a3e-2da7-665021005a0f",
+            "title": "Execo",
+            "main_reference_number": "1983.871"
+        },
+        {
+            "_score": 8.318304,
+            "artist_display": "Ed Paschke, in collaboration with Ellen Sandor, Stephan Meyers & Janine Fron, representing (art)n",
+            "date_display": "1997",
+            "id": 156866,
+            "image_id": "ed5a4c4c-b3b1-4edc-d396-f7c8453b8de8",
+            "title": "No Fumare, Por Favore",
+            "main_reference_number": "2000.721"
+        },
+        {
+            "_score": 8.280833,
+            "artist_display": "Ed Paschke (American, 1939-2004)\nprinted by Jack Lemon\npublished by Landfall Press (American, founded 1970)",
+            "date_display": "1984",
+            "id": 102704,
+            "image_id": "be85aecc-d0dc-9325-4893-3128bc559668",
+            "title": "Kontato",
+            "main_reference_number": "1984.651"
+        },
+        {
+            "_score": 8.155523,
+            "artist_display": "Ed Paschke\nAmerican, 1939-2004",
+            "date_display": "1970",
+            "id": 191316,
+            "image_id": "9f60ca9a-dd38-8e84-42b0-12ad40cee0d8",
+            "title": "The Ed Paschke Show",
+            "main_reference_number": "2007.326"
+        },
+        {
+            "_score": 8.140491,
+            "artist_display": "Ed Paschke\nAmerican, 1939-2004",
+            "date_display": "1974",
+            "id": 97053,
+            "image_id": "65d0798b-4fc7-ca22-6cd5-aae5e1a50be1",
+            "title": "Charlene",
+            "main_reference_number": "1982.122"
+        },
+        {
+            "_score": 7.9238453,
+            "artist_display": "Ed Paschke (American, 1939-2004)\nconceived, organized, and produced by Sonia Sheridan\nproduced by The School of the Art Institute of Chicago and the Advance Screen Company, Chicago\ndistributed by The Goodlion",
+            "date_display": "1970",
+            "id": 190822,
+            "image_id": "d55945c7-fee2-cfad-85bd-8c3cf8845eb5",
+            "title": "Untitled, from Screen Prints 1970",
+            "main_reference_number": "2005.589.54"
+        }
+    ],
+    "info": {
+        "license_text": "The `description` field in this response is licensed under a Creative Commons Attribution 4.0 Generic License (CC-By) and the Terms and Conditions of artic.edu. All other data in this response is licensed under a Creative Commons Zero (CC0) 1.0 designation and the Terms and Conditions of artic.edu.",
+        "license_links": [
+            "https:\/\/creativecommons.org\/publicdomain\/zero\/1.0\/",
+            "https:\/\/www.artic.edu\/terms"
+        ],
+        "version": "1.10"
+    },
+    "config": {
+        "iiif_url": "https:\/\/www.artic.edu\/iiif\/2",
+        "website_url": "http:\/\/www.artic.edu"
+    }
+}

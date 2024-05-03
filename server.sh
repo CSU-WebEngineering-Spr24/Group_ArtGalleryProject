@@ -1,1 +1,4 @@
-gradle build && gradle bootrun
+sdk install java 17.0.10-amzn
+
+
+gradle bootrun
