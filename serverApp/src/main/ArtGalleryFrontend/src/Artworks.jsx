@@ -18,8 +18,8 @@ function App() {
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(1);
   const [query, setQuery] = useState("");
-  const [dateStart, setDateStart] = useState("");
-  const [dateEnd, setDateEnd] = useState("");
+  // const [dateStart, setDateStart] = useState("");
+  // const [dateEnd, setDateEnd] = useState("");
   const [loading, setLoading] = useState(false);
 
   const fetchArtworks = async () => {
@@ -37,17 +37,17 @@ function App() {
             ]
         };
 
-        if (dateStart && dateEnd) {
-            // Adding date range condition
-            queryObj.must.push({
-                range: {
-                    date_start: {
-                        gte: dateStart,
-                        lte: dateEnd
-                    }
-                }
-            });
-        }
+        // if (dateStart && dateEnd) {
+        //     // Adding date range condition
+        //     queryObj.must.push({
+        //         range: {
+        //             date_start: {
+        //                 gte: dateStart,
+        //                 lte: dateEnd
+        //             }
+        //         }
+        //     });
+        // }
 
         if (query) {
             queryParams.q = query;
@@ -120,7 +120,7 @@ function App() {
               </Col>
             </Row>
             <Row>
-              <Col sm={6} md={3}>
+              {/* <Col sm={6} md={3}>
                 <Form.Group controlId="formDateStart">
                   <Form.Label>Date Start</Form.Label>
                   <Form.Control
@@ -139,7 +139,7 @@ function App() {
                     onChange={(e) => setDateEnd(e.target.value)}
                   />
                 </Form.Group>
-              </Col>
+              </Col> */}
               <Col md={6}>
                 <Button
                   variant="primary"

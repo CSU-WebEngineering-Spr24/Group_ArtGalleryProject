@@ -5,11 +5,12 @@
 # Group_ArtGalleryProject
 
 ```
-cd ArtGalleryFrontend
+cd serverApp
 
-npm i
+sdk install java 17.0.10-amzn
 
-npm run dev
+
+gradle bootrun
 
 ```
 

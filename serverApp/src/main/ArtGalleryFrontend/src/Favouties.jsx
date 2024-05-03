@@ -13,7 +13,7 @@ function FavouritesPage() {
       try {
         // { params: { limit: 4 , page: }  page random number
         const response = await axios.get('https://api.artic.edu/api/v1/artworks', { params: { limit: 7 , page : Math.floor(Math.random() * 10) } });
-        setFavourites(response.data.data); // Assuming the data is in response.data.data
+        setFavourites(response.data.data); 
       } catch (error) {
         console.error('Error fetching artworks:', error);
       } finally {

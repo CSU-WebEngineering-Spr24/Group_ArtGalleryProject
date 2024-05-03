@@ -32,8 +32,9 @@ function NavBarComp() {
                   <Nav.Link as={Link} to="/artworks">Artworks</Nav.Link>
                   <Nav.Link as={Link} to="/artists">Artists</Nav.Link>
                   
+                  {/*
                   <Nav.Link as={Link} to="/global">Global</Nav.Link>
-                  {/* <NavDropdown
+                  <NavDropdown
                     title="Dropdown"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
