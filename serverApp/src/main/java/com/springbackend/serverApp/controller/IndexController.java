@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 
-    @GetMapping( value = {"/", "/home", "favourites", "artworks", "artists", "global", "/artworks/*", "artists/*"} )
+    @GetMapping( value = {"/", "/home", "/favourites", "/artworks", "/artists", "/global", "/artworks/*", "/artists/*"} )
     public String index(Model model) {
         return "index";
     }

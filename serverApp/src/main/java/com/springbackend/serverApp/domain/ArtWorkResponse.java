@@ -193,6 +193,21 @@ class ArtWorkResponseData {
         "short_description": "Alma Thomas was enthralled by astronauts and outer space. This painting, made when she was 81, showcases that fascination through her signature style of short, rhythmic strokes of paint. \u201cColor is life, and light is the mother of color,\u201d she once proclaimed. In 1972, she became the first African American woman to have a solo exhibition at the Whitney Museum of American Art in New York.",
         "dimensions": "152.4 \u00d7 134.6 cm (60 \u00d7 53 in.)"
     */
+
+    
+    public static class Dimensions {
+        @JsonProperty("depth")
+        private Object depth;
+        @JsonProperty("width")
+        private int width;
+        @JsonProperty("height")
+        private int height;
+        @JsonProperty("diameter")
+        private Object diameter;
+        @JsonProperty("clarification")
+        private Object clarification;
+    }
+
     @JsonProperty("id")
     private int id;
     @JsonProperty("api_model")
@@ -205,8 +220,8 @@ class ArtWorkResponseData {
     private String title;
     @JsonProperty("alt_titles")
     private String altTitles;
-    @JsonProperty("thumbnail")
-    private Thumbnail thumbnail;
+    // @JsonProperty("thumbnail")
+    // private Thumbnail thumbnail;
     @JsonProperty("main_reference_number")
     private String mainReferenceNumber;
     @JsonProperty("has_not_been_viewed_much")
@@ -232,40 +247,9 @@ class ArtWorkResponseData {
     @JsonProperty("short_description")
     private String shortDescription;
     @JsonProperty("dimensions")
-
-    /* 
-    "dimensions_detail": [
-            {
-                "depth": null,
-                "width": 134,
-                "height": 152,
-                "diameter": null,
-                "clarification": null
-            }
-        ],
-        "medium_display": "Acrylic on canvas",
-        "inscriptions": null,
-        "credit_line": "Purchased with funds provided by Mary P. Hines in memory of her mother, Frances W. Pick",
-        "catalogue_display": null,
-        "publication_history": null,
-        "exhibition_history": null,
-        "provenance_text": null,
-        "edition": null,
-        "publishing_verification_level": "Web Basic",
-        "internal_department_id": 246,
-        "fiscal_year": 1994,
-        "fiscal_year_deaccession": null,
-        "is_public_domain": false,
-        "is_zoomable": true,
-        "max_zoom_window_size": -1,
-        "copyright_notice": null,
-        "has_multimedia_resources": false,
-        "has_educational_resources": true,
-        "has_advanced_imaging": false,
-        "colorfulness": 53.6375, */
-    @JsonProperty("dimensions_detail")
-    private List<Dimensions> dimensions;
-    @JsonProperty("medium_display")
+    // @JsonProperty("dimensions_detail")
+    // private List<Dimensions> dimensions;
+    // @JsonProperty("medium_display")
     private String mediumDisplay;
     @JsonProperty("inscriptions")
     private String inscriptions;
@@ -306,19 +290,6 @@ class ArtWorkResponseData {
     @JsonProperty("colorfulness")
     private double colorfulness;
 
-    public static class Dimensions {
-
-        @JsonProperty("depth")
-        private Object depth;
-        @JsonProperty("width")
-        private int width;
-        @JsonProperty("height")
-        private int height;
-        @JsonProperty("diameter")
-        private Object diameter;
-        @JsonProperty("clarification")
-        private Object clarification;
-    }
 
     public static class Color {
         @JsonProperty("h")

@@ -33,7 +33,7 @@ function NavBarComp() {
                   <Nav.Link as={Link} to="/artists">Artists</Nav.Link>
                   
                   <Nav.Link as={Link} to="/global">Global</Nav.Link>
-                  <NavDropdown
+                  {/* <NavDropdown
                     title="Dropdown"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
@@ -48,7 +48,7 @@ function NavBarComp() {
                     <NavDropdown.Item href="/exhibitions">
                       Exhibitions
                     </NavDropdown.Item>
-                  </NavDropdown>
+                  </NavDropdown> */}
                 </Nav>
                 {/* Below button for favourites page redirect */}
                 <Button variant="outline-success" as={Link} to="/favourites">Favourites</Button>

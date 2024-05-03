@@ -101,7 +101,8 @@ public class ArtistResponse {
             private List<String> input;
             @JsonProperty("weight")
             private int weight;
-            @JsonProperty("contexts")
-            private Contexts contexts;
+            // @JsonProperty("contexts")
+            // private Contexts contexts;
         }
+}
 }
