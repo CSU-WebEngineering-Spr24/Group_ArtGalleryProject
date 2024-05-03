@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Outlet} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './components/NavBar';
-import AppFooter from './components/AppFooter';
+import NavBarComp from './NavBar.jsx';
+import AppFooter from './AppFooter.jsx';
 
 function App() {
   const [artworks, setArtworks] = useState([]);
@@ -33,7 +33,7 @@ function App() {
   return (
     <>  
     {/* NavBar */}
-    <NavBar />
+    <NavBarComp />
     <Outlet />
     <AppFooter/>
     {/* <Footer/> */}

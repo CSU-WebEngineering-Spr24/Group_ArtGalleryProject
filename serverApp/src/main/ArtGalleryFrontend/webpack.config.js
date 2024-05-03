@@ -29,18 +29,17 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|svg|jpg|gif|eot|otf|ttf|woff|woff2)$/,
-                include: path.resolve(__dirname, 'public'),
+                test: /\.(png|jpe?g|gif|svg)$/i,
                 use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[name].[ext]',
-                            outputPath: 'images/'
-                        }
-                    }
-                ]
-            }
+                  {
+                    loader: 'file-loader',
+                    options: {
+                      name: '[name].[ext]',
+                      outputPath: 'images/',
+                    },
+                  },
+                ],
+              },
         ]
     }
 };

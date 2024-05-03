@@ -9,6 +9,8 @@ import FavouritesPage from './Favouties.jsx';
 import ArtistsPage from './Artists.jsx';
 import ArtistDetailsPage from './ArtistDetailsPage.jsx';
 import ArtworkDetailsPage from './ArtworkDetailsPage.jsx';
+import AppFooter from './AppFooter.jsx';
+import NavBarComp from './NavBar.jsx';
 
 // CSS styles to make the root element occupy 100% width
 const rootStyle = {
