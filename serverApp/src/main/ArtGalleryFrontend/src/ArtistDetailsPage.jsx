@@ -15,7 +15,9 @@ function ArtistDetailsPage() {
     useEffect(() => {
         const fetchArtist = async () => {
             try {
+                // const artistResponse = await axios.get(`https://api.artic.edu/api/v1/agents/${artistId}`);
                 const artistResponse = await axios.get(`https://api.artic.edu/api/v1/agents/${artistId}`);
+
                 console.log(artistResponse.config.url);
                 console.log(artistResponse.data.data);
                 setArtist(artistResponse.data.data);

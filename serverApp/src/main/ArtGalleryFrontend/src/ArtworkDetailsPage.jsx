@@ -12,7 +12,8 @@ function ArtworkDetailsPage() {
     useEffect(() => {
         const fetchArtwork = async () => {
             try {
-                const response = await axios.get(`https://api.artic.edu/api/v1/artworks/${artworkId}`);
+                // https://api.artic.edu/api/v1
+                const response = await axios.get(`/api/artworks/${artworkId}`);
                 setArtwork(response.data.data);
                 setError(false);
             } catch (error) {
