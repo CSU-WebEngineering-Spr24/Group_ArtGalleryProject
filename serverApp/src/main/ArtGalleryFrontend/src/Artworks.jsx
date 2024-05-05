@@ -58,7 +58,18 @@ function App() {
             bool: queryObj
         };
 
-        const url = `https://api.artic.edu/api/v1/artworks/search?params=${encodeURIComponent(JSON.stringify(queryParams))}`;
+        // const url = `https://api.artic.edu/api/v1/artworks/search?params=${encodeURIComponent(JSON.stringify(queryParams))}`;
+        let url = `/api/artworks?`;
+        if (query){
+            url += `artname=${query}&`
+        }
+        if (limit){
+            url += `limit=${limit}&`
+        }
+        if (page){
+            url += `pagenum=${page}&`
+        }
+
         const response = await axios.get(url);
         setArtworks(response.data.data);
     } catch (error) {
